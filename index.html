@@ -6,73 +6,94 @@
 <title>O Guia do Mochileiro Certificado</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.42.0/dist/tabler-icons.min.css">
 <style>
-:root{--radius:8px;--border:rgba(0,0,0,.1);--border-strong:rgba(0,0,0,.2);--border-accent:#86b6ef;--border-success:#73cb6d;--border-warning:#eda100;--surface-0:#f9f9f7;--surface-1:#fcfcfb;--surface-2:#ffffff;--text-primary:#0b0b0b;--text-secondary:#52514e;--text-muted:#898781;--text-accent:#184f95;--text-success:#006300;--text-danger:#8e2626;--text-warning:#734500;--bg-accent:#cde2fb;--bg-success:#caeac7;--bg-danger:#fad6d6;--bg-warning:#f9dca4;--focus-shadow:0 0 0 2px #2a78d6;--font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
-@media (prefers-color-scheme:dark){:root{--border:rgba(255,255,255,.1);--border-strong:rgba(255,255,255,.2);--border-accent:#0d366b;--border-success:#074506;--border-warning:#512e00;--surface-0:#0b0b0b;--surface-1:#151515;--surface-2:#1a1a19;--text-primary:#f0efec;--text-secondary:#c3c2b7;--text-muted:#898781;--text-accent:#6da7ec;--text-success:#0ca30c;--text-danger:#ec7e7e;--text-warning:#db9300;--bg-accent:#032042;--bg-success:#11260f;--bg-danger:#3c0e0e;--bg-warning:#311a00;--focus-shadow:0 0 0 2px #6da7ec}}
+:root{--radius:12px;--radius-lg:18px;--border:rgba(30,35,70,.09);--border-strong:rgba(30,35,70,.18);--border-accent:#8b93f5;--border-success:#6fd09a;--border-warning:#f2b84b;--surface-0:#f4f5fb;--surface-1:#eef0f9;--surface-2:#ffffff;--text-primary:#1b1d2a;--text-secondary:#4f546b;--text-muted:#747990;--text-accent:#3730a3;--text-success:#0b6a39;--text-danger:#a02525;--text-warning:#7a4b00;--bg-accent:#e6e8ff;--bg-success:#daf6e4;--bg-danger:#ffe2e2;--bg-warning:#fff0c9;--focus-shadow:0 0 0 3px rgba(99,102,241,.5);--shadow-sm:0 1px 2px rgba(30,35,70,.06),0 2px 6px rgba(30,35,70,.04);--shadow-md:0 8px 24px rgba(30,35,70,.10);--grad:linear-gradient(135deg,#4f46e5 0%,#7c3aed 55%,#db2777 100%);--page-glow:rgba(124,58,237,.10);--font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--border:rgba(255,255,255,.09);--border-strong:rgba(255,255,255,.2);--border-accent:#4a52c9;--border-success:#1f6b43;--border-warning:#7a5a14;--surface-0:#0f111a;--surface-1:#171a27;--surface-2:#1c2031;--text-primary:#ecedf6;--text-secondary:#b8bcd0;--text-muted:#8c91aa;--text-accent:#b0b6ff;--text-success:#62d98f;--text-danger:#ff9c9c;--text-warning:#f5c15a;--bg-accent:#242a5c;--bg-success:#12301f;--bg-danger:#3a1618;--bg-warning:#3a2a0a;--focus-shadow:0 0 0 3px rgba(129,140,248,.55);--shadow-sm:0 1px 2px rgba(0,0,0,.35);--shadow-md:0 10px 30px rgba(0,0,0,.45);--page-glow:rgba(99,102,241,.16)}}
 *{box-sizing:border-box}
-body{margin:0;padding:16px;background:var(--surface-0);color:var(--text-primary);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.4}
+html{scroll-behavior:smooth}
+body{margin:0;padding:20px 16px 48px;background:var(--surface-0) radial-gradient(900px 380px at 50% -120px,var(--page-glow),transparent 70%) no-repeat;color:var(--text-primary);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+::selection{background:var(--bg-accent);color:var(--text-accent)}
 p{margin:0}
-button{font:inherit;font-size:14px;padding:8px 16px;background:transparent;color:var(--text-primary);border:0.5px solid var(--border-strong);border-radius:var(--radius);cursor:pointer}
-button:hover{background:var(--surface-1)}
-input,textarea{font:inherit;width:100%;padding:8px 12px;font-size:15px;background:var(--surface-2);color:var(--text-primary);border:0.5px solid var(--border-strong);border-radius:6px}
-textarea{min-height:80px;resize:vertical}
-a{color:var(--text-accent)}
+button{font:inherit;font-size:14px;padding:9px 16px;background:var(--surface-2);color:var(--text-primary);border:1px solid var(--border-strong);border-radius:var(--radius);cursor:pointer;transition:background .15s,border-color .15s,box-shadow .15s,transform .15s}
+button:hover{background:var(--surface-1);border-color:var(--border-accent);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+button:active{transform:translateY(0)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:none;box-shadow:var(--focus-shadow)}
+input,textarea{font:inherit;width:100%;padding:10px 14px;font-size:15px;background:var(--surface-2);color:var(--text-primary);border:1px solid var(--border-strong);border-radius:var(--radius);transition:border-color .15s,box-shadow .15s}
+input:focus,textarea:focus{border-color:var(--border-accent);box-shadow:var(--focus-shadow);outline:none}
+textarea{min-height:90px;resize:vertical;line-height:1.55}
+a{color:var(--text-accent);text-underline-offset:3px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.tab{padding:8px 16px;border:0.5px solid var(--border);border-radius:var(--radius);background:transparent;cursor:pointer;color:var(--text-primary);font-size:14px}
-.sub{padding:10px 12px;border:0.5px solid var(--border);border-radius:var(--radius);background:transparent;cursor:pointer;text-align:left;color:var(--text-primary);font-size:14px;line-height:1.3}
-.sub small{display:block;color:var(--text-secondary);font-size:12px;margin-top:2px}
-.sub.on{border:2px solid var(--border-accent);background:var(--bg-accent);padding:9px 11px}
-#card{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;min-height:320px;cursor:pointer;display:flex;flex-direction:column;outline:none}
-#card:focus-visible{box-shadow:var(--focus-shadow)}
-.bar{height:4px;border-radius:2px;background:var(--surface-1);margin:0 0 12px;overflow:hidden}
-.bar i{display:block;height:4px;background:var(--border-accent);border-radius:2px}
-.badge{display:inline-block;background:var(--bg-accent);color:var(--text-accent);font-size:12px;padding:4px 12px;border-radius:var(--radius)}
-.blk{border-radius:var(--radius);padding:10px 14px;margin:0 0 8px}
-.blk .cap{font-size:12px;margin:0 0 4px;display:flex;align-items:center;gap:6px}
-.blk p.t{margin:0;font-size:15px;line-height:1.6}
-.b-def{background:var(--surface-1)}
+.hero{position:relative;overflow:hidden;margin:0 0 1.25rem;padding:26px 24px 22px;border-radius:var(--radius-lg);background:var(--grad);color:#fff;box-shadow:var(--shadow-md)}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.12);pointer-events:none}
+.hero::before{width:220px;height:220px;right:-60px;top:-90px}
+.hero::after{width:140px;height:140px;right:90px;bottom:-80px;background:rgba(255,255,255,.08)}
+.hero>*{position:relative}
+.hero .badge{background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.35);letter-spacing:.06em;font-weight:600;backdrop-filter:blur(4px)}
+.hero-title{font-size:clamp(24px,4.6vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:14px 0 8px}
+.hero-sub{font-size:15px;line-height:1.55;max-width:60ch;color:rgba(255,255,255,.92)}
+.hero-note{margin-top:12px;font-size:13px;line-height:1.5;color:rgba(255,255,255,.78)}
+.tab{padding:8px 16px;border:1px solid var(--border);border-radius:999px;background:transparent;cursor:pointer;color:var(--text-primary);font-size:14px}
+.sub{padding:11px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface-2);cursor:pointer;text-align:left;color:var(--text-primary);font-size:14px;line-height:1.3;box-shadow:var(--shadow-sm)}
+.sub small{display:block;color:var(--text-secondary);font-size:12px;margin-top:3px}
+.sub.on{border-color:var(--border-accent);background:var(--bg-accent);color:var(--text-accent);font-weight:600;box-shadow:inset 0 0 0 1px var(--border-accent)}
+.sub.on small{color:var(--text-accent);opacity:.8;font-weight:400}
+#card{background:var(--surface-2);border:1px solid var(--border);border-radius:22px;padding:1.5rem 1.75rem;min-height:320px;cursor:pointer;display:flex;flex-direction:column;outline:none;box-shadow:var(--shadow-md);transition:box-shadow .2s,transform .2s}
+#card:hover{transform:translateY(-2px)}
+#card:focus-visible{box-shadow:var(--focus-shadow),var(--shadow-md)}
+.bar{height:8px;border-radius:999px;background:var(--surface-1);margin:0 0 14px;overflow:hidden}
+.bar i{display:block;height:8px;background:var(--grad);border-radius:999px;transition:width .3s}
+.badge{display:inline-block;background:var(--bg-accent);color:var(--text-accent);font-size:12px;padding:5px 14px;border-radius:999px}
+.blk{border-radius:var(--radius);padding:12px 16px;margin:0 0 10px;border:1px solid transparent}
+.blk .cap{font-size:12px;font-weight:600;letter-spacing:.02em;margin:0 0 5px;display:flex;align-items:center;gap:6px}
+.blk p.t{margin:0;font-size:15px;line-height:1.65}
+.b-def{background:var(--surface-1);border-color:var(--border)}
 .b-def .cap{color:var(--text-secondary)}
-.b-exm{background:var(--bg-accent);color:var(--text-accent)}
-.b-cur{background:var(--bg-warning);color:var(--text-warning)}
-.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-secondary);border:0.5px solid var(--border);border-radius:var(--radius);padding:4px 10px}
-button.pill{background:transparent;cursor:pointer;color:var(--text-primary)}
-button.pill:hover{background:var(--surface-1)}
-.seg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:0 0 1rem}
-.sg{padding:10px 12px;border:0.5px solid var(--border);border-radius:var(--radius);background:transparent;cursor:pointer;color:var(--text-primary);font-size:14px;display:flex;align-items:center;gap:8px;justify-content:center}
-.sg.on{border:2px solid var(--border-accent);background:var(--bg-accent);padding:9px 11px}
-.ct{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:12px 14px;margin:0 0 8px}
-.ct.hi{border:2px solid var(--border-accent);padding:11px 13px}
-.ess{display:flex;gap:12px;align-items:flex-start}
-.num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--bg-accent);color:var(--text-accent);font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;margin-top:1px}
-.dc{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;align-items:stretch}
+.b-exm{background:var(--bg-accent);color:var(--text-accent);border-color:var(--border-accent)}
+.b-cur{background:var(--bg-warning);color:var(--text-warning);border-color:var(--border-warning)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text-secondary);border:1px solid var(--border-strong);border-radius:999px;padding:5px 12px;background:var(--surface-2)}
+button.pill{cursor:pointer;color:var(--text-primary);padding:5px 12px}
+button.pill:hover{background:var(--bg-accent);color:var(--text-accent)}
+.seg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 1.25rem}
+.sg{padding:11px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface-2);cursor:pointer;color:var(--text-primary);font-size:14px;display:flex;align-items:center;gap:10px;justify-content:center;box-shadow:var(--shadow-sm)}
+.sg .ti{font-size:20px;color:var(--text-accent);flex:none}
+.sg.on{border-color:var(--border-accent);background:var(--bg-accent);color:var(--text-accent);font-weight:600;box-shadow:inset 0 0 0 1px var(--border-accent),var(--shadow-sm)}
+.ct{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px 18px;margin:0 0 10px;box-shadow:var(--shadow-sm)}
+.ct.hi{border-color:var(--border-accent);box-shadow:inset 0 0 0 1px var(--border-accent),var(--shadow-sm)}
+.ess{display:flex;gap:14px;align-items:flex-start}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--grad);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;box-shadow:0 2px 6px rgba(99,102,241,.35)}
+.dc{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;align-items:stretch}
 .cap{font-size:12px;color:var(--text-muted);margin:0 0 4px}
-.q{font-size:14px;line-height:1.5;margin:0}
-.box{border-radius:var(--radius);padding:8px 10px;font-size:14px;line-height:1.5}
+.q{font-size:14px;line-height:1.55;margin:0}
+.box{border-radius:var(--radius);padding:10px 12px;font-size:14px;line-height:1.55}
 .ok{background:var(--bg-success);color:var(--text-success)}
 .no{background:var(--bg-danger);color:var(--text-danger)}
 .ba{background:var(--bg-accent);color:var(--text-accent)}
 .bb{background:var(--surface-1);color:var(--text-primary)}
 .bb .cap{color:var(--text-secondary)}
 .box .cap{color:inherit}
-.h{font-size:13px;color:var(--text-secondary);margin:1.25rem 0 8px;font-weight:500}
-.mono{font-family:var(--font-mono);font-size:12.5px;background:var(--surface-1);padding:1px 6px;border-radius:4px;overflow-wrap:anywhere}
-.code{font-family:var(--font-mono);font-size:12.5px;line-height:1.55;background:var(--surface-1);border:0.5px solid var(--border);border-radius:var(--radius);padding:10px 12px;margin:8px 0 0;overflow-x:auto;white-space:pre;color:var(--text-primary)}
-.rowb{display:flex;align-items:center;gap:10px;width:100%;justify-content:flex-start;text-align:left;margin:0 0 6px;font-size:14px;line-height:1.4}
+.h{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--text-primary);margin:2rem 0 12px;font-weight:700;letter-spacing:-.01em}
+.h::before{content:"";flex:none;width:5px;height:20px;border-radius:999px;background:var(--grad)}
+.mono{font-family:var(--font-mono);font-size:12.5px;background:var(--surface-1);padding:2px 7px;border-radius:6px;overflow-wrap:anywhere}
+.code{font-family:var(--font-mono);font-size:12.5px;line-height:1.6;background:var(--surface-1);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;margin:10px 0 0;overflow-x:auto;white-space:pre;color:var(--text-primary)}
+.rowb{display:flex;align-items:center;gap:10px;width:100%;justify-content:flex-start;text-align:left;margin:0 0 8px;font-size:14px;line-height:1.4}
 .rowb.on{background:var(--bg-success);color:var(--text-success);border-color:var(--border-success)}
-.tr{height:10px;border-radius:5px;background:var(--surface-1);overflow:hidden;flex:1}
-.tr i{display:block;height:10px;background:var(--border-accent)}
-.mu{color:var(--text-secondary);font-size:14px;line-height:1.55;margin:4px 0 0}
+.tr{height:12px;border-radius:999px;background:var(--surface-1);overflow:hidden;flex:1}
+.tr i{display:block;height:12px;background:var(--grad);border-radius:999px}
+.mu{color:var(--text-secondary);font-size:14px;line-height:1.6;margin:4px 0 0}
+footer{margin:2.5rem 0 0;padding:16px 0 0;border-top:1px solid var(--border);text-align:center;font-size:12px;color:var(--text-muted);line-height:1.6}
+@media (max-width:560px){body{padding:12px 12px 40px}.hero{padding:20px 18px 18px}.ct{padding:12px 14px}#card{padding:1.25rem 1.25rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}button:hover,#card:hover{transform:none}}
 </style>
 </head>
 <body>
 <div style="max-width:900px;margin:0 auto">
 <h2 class="sr-only">O Guia do Mochileiro Certificado: abas A prova, Minha jornada, Preparação, Estudo, Tips, Ferramentas, Flashcards, Referência rápida, Antes da prova e Princípios.</h2>
-<div style="margin:0 0 1rem">
+<header class="hero">
 <span class="badge">NÃO ENTRE EM PÂNICO · DON'T PANIC</span>
-<p style="font-size:24px;font-weight:500;margin:8px 0 2px;line-height:1.25">O Guia do Mochileiro Certificado</p>
-<p style="margin:0;color:var(--text-secondary);font-size:14px;line-height:1.5">Edição Claude Certified Architect (CCA-F). Um guia de bolso para atravessar a galáxia da certificação com toalha, flashcards e simulados.</p>
-<p style="margin:6px 0 0;color:var(--text-muted);font-size:12px;line-height:1.5">Resposta para a vida, o universo e tudo: 42. Resposta para «como garantir uma regra?»: código, não prompt.</p>
-</div>
-<div class="seg" id="nav" style="grid-template-columns:repeat(auto-fit,minmax(135px,1fr))"></div>
+<p class="hero-title">O Guia do Mochileiro Certificado</p>
+<p class="hero-sub">Edição Claude Certified Architect (CCA-F). Um guia de bolso para atravessar a galáxia da certificação com toalha, flashcards e simulados.</p>
+<p class="hero-note">Resposta para a vida, o universo e tudo: 42. Resposta para «como garantir uma regra?»: código, não prompt.</p>
+</header>
+<div class="seg" id="nav" style="grid-template-columns:repeat(auto-fit,minmax(165px,1fr))"></div>
 <div id="subs" style="display:none;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:0 0 1rem"></div>
 <div id="guide" style="display:none"></div>
 <div id="fc" style="display:none">
@@ -92,7 +113,7 @@ button.pill:hover{background:var(--surface-1)}
 <div id="qr" style="display:none"></div>
 </div>
 <div id="ck" style="display:none"></div>
-<footer style="margin:2rem 0 0;padding:12px 0 0;border-top:0.5px solid var(--border);text-align:center;font-size:12px;color:var(--text-muted);line-height:1.5">Desenvolvido por Bárbara Rossalli (<a href="mailto:barbara.rocha@zup.com.br">barbara.rocha@zup.com.br</a>)</footer>
+<footer>Desenvolvido por Bárbara Rossalli (<a href="mailto:barbara.rocha@zup.com.br">barbara.rocha@zup.com.br</a>)</footer>
 </div>
 <script>
 const D=[
@@ -1371,7 +1392,7 @@ TIPT.forEach(r=>cardRow(w,r[0],"",r[1]));
 const PRI=[["Não entre em pânico", "don't panic", "Em letras grandes e amigáveis. Se a questão parecer vinda de outra galáxia, respire e releia: as quatro alternativas serão plausíveis (é assim que a prova é feita), e quase todo erro de pânico é erro de leitura. Cerca de 2 minutos por questão: marque a dúvida e siga.", "mood-smile"], ["Saiba sempre onde está a sua toalha", "know where your towel is", "A toalha do candidato é o método, mais do que a memória: ler a pergunta, achar o gatilho, eliminar, decidir. Junte a ela o ambiente testado, o documento separado e uma rotina que você já conhece. Quem tem a toalha atravessa a galáxia.", "shirt"], ["A resposta é 42, mas qual era a pergunta?", "the answer is 42", "Uma resposta certa para a pergunta errada vale zero. Leia o que se pede: primeiro passo, causa raiz, mais eficaz. E guarde a única resposta que vale em qualquer galáxia: para garantir uma regra, código, não prompt.", "question-mark"], ["O peixe-babel", "the babel fish", "Enfie o enunciado no ouvido e traduza-o para um padrão conhecido: etapa pulada vira gate, descrição mínima vira descrição melhor, timeout vira erro estruturado, job que trava vira -p. A tabela de frases-gatilho na aba Tips é o seu peixe.", "language"], ["A poesia vogon", "vogon poetry", "Cenários longos podem ser terríveis de ler, cheios de enfeite. Sobreviva extraindo três coisas: os números, o que falhou e o que se pede. O resto é poesia vogon: ouça com educação e siga em frente.", "writing"], ["Praticamente inofensiva", "mostly harmless", "O Guia resumiu a Terra assim, e dá para dizer o mesmo das alternativas erradas: parecem sensatas, não quebram nada e mesmo assim não resolvem o problema do enunciado. Resolvem outro problema, exageram ou chegam na hora errada.", "alert-triangle"], ["O motor de improbabilidade", "infinite improbability drive", "Um prompt é um motor de improbabilidade: quase sempre funciona, e às vezes pula a verificação (8% das vezes, por exemplo). Se a falha custa dinheiro, identidade ou conformidade, não aposte no improvável: use hook, gate, código. Isso é determinístico.", "dice"], ["Duas cabeças pensam melhor que uma", "two heads", "Zaphod tinha duas. Para revisar, você também precisa de duas: uma instância independente, sem o raciocínio de quem gerou (autorrevisão na mesma sessão não conta). Em revisões grandes, uma passada por arquivo mais uma de integração.", "users"], ["Em caso de dúvida, o Guia manda", "the guide is definitive", "Na prova vale o guia oficial; na documentação de hoje vale a realidade, e as duas às vezes discordam (allowedTools restringe na prova, e só pré-aprova na documentação atual). Responda com o guia e guarde a nota de estado atual para o dia a dia.", "book"], ["Marvin e o terço final", "Marvin", "Um cérebro do tamanho de um planeta e, no fim, exaustão. Muita gente sabe a matéria e perde pontos no último terço da prova. Treine a resistência: simulados de 60, microparadas, meditação, método fixo por questão. Use o medidor na aba Ferramentas.", "robot"], ["Nenhum Pan Galactic Gargle Blaster na véspera", "no new cocktails", "A bebida mais forte da galáxia é má ideia antes de uma prova, e qualquer novidade também: comida, cafeína, horário de sono ou método de estudo. Na véspera, só o que você já conhece. Faça o último simulado, revise os erros e durma cedo.", "apple"], ["Adeus, e obrigado pelos peixes", "so long, and thanks for all the fish", "Terminou? Solte o assunto: descanse, anote suas impressões sobre o formato e o que faria diferente no estudo (sem reproduzir questões: o exame é confidencial) e deixe a próxima edição do Guia para depois.", "fish"]];
 function pagePri(w){
 const b=mk("div","",null,"ct");b.style.cssText+=";text-align:center;padding:24px 16px;border:2px solid var(--border-accent)";
-b.appendChild(mk("p","NÃO ENTRE EM PÂNICO","font-size:30px;font-weight:700;letter-spacing:.04em;margin:0;line-height:1.15;color:var(--text-accent)"));
+b.appendChild(mk("p","NÃO ENTRE EM PÂNICO","font-size:clamp(20px,6vw,30px);font-weight:700;letter-spacing:.04em;margin:0;line-height:1.15;color:var(--text-accent)"));
 b.appendChild(mk("p","DON'T PANIC","font-size:13px;color:var(--text-muted);margin:6px 0 0;letter-spacing:.2em"));
 b.appendChild(mk("p","Em letras grandes e amigáveis, na capa do Guia. Também na sua.","font-size:14px;color:var(--text-secondary);margin:10px 0 0"));
 w.appendChild(b);
